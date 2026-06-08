@@ -11,10 +11,10 @@ class Home extends BaseController
         helper(['form', 'url']);
 
         $vehicleModel = new VehicleModel();
-        $Vehicles = $vehicleModel->orderBy('dibuat_pada', 'DESC')->findA11(4);
+        $vehicles = $vehicleModel->orderBy('dibuat_pada', 'DESC')->findAll(4);
 
-        return view('home',[
-            'vechiles' => $vehicles,
+        return view('home', [
+            'vehicles' => $vehicles,
             'user' => session()->get('user'),
         ]);
     }
