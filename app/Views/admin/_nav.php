@@ -1,14 +1,14 @@
-a<?php
+<?php
 
-$peran = session()->get('user')['peran'] ?? '';
+$peran  = session()->get('user')['peran'] ?? '';
 $active = $active ?? '';
 
-$isMaster = $peran === 'admin_master';
+$isMaster     = $peran === 'admin_master';
 $isPembayaran = $peran === 'admin_pembayaran';
 ?>
 <div class="adm-nav">
     <?php if ($isMaster): ?>
-        <a href="/admin" <?= $active === 'dasboard' ? 'class="active"' : '' ?>>Dasboard</a>
+        <a href="/admin" <?= $active === 'dashboard' ? 'class="active"' : '' ?>>Dasbor</a>
         <a href="/admin/applications" <?= $active === 'applications' ? 'class="active"' : '' ?>>Pengajuan</a>
         <a href="/admin/users" <?= $active === 'users' ? 'class="active"' : '' ?>>Pengguna</a>
         <a href="/admin/vehicles" <?= $active === 'vehicles' ? 'class="active"' : '' ?>>Kendaraan</a>
@@ -18,4 +18,3 @@ $isPembayaran = $peran === 'admin_pembayaran';
         <a href="/admin/reports" <?= $active === 'reports' ? 'class="active"' : '' ?>>Laporan</a>
     <?php endif; ?>
 </div>
-
